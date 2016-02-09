@@ -32,8 +32,8 @@ class: middle, center
 ---
 class: middle
 # what are we going to learn?
-- 3 very easy task
-- 1 very complicated
+- 3 very easy tasks
+- 1 very complicated task
 ---
 class: center, middle
 ![DOOM Nightmare mode](http://i.imgur.com/4xOVeut.png)
