@@ -9,8 +9,7 @@
     <div id="navigation"><a href="/">Home</a></div>
     <div id="github-ribbon"></div>
     <div class="container">
-      <div class="col-xs-12">    
-        <div id="source" style="display:none;"></div>
+      <div class="col-xs-12">
         <div id="rendered"> </div>
       </div>
     </div>
@@ -27,8 +26,9 @@
           if (/presentation/.test(q)) {
             // Load the remark.js script
             $.getScript('resources/js/remark-latest.min.js', function() {
-              $("#source").html(response);
-              var slideshow = remark.create();
+              var slideshow = remark.create({
+                source: response
+              });
             });
 
           }
