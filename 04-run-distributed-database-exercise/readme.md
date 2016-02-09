@@ -2,7 +2,7 @@
 
 Lets try to run redis inside Kubernetes. Redis is a simpel Key-Value store.
 
-First we need to create a redis master. Let's start by creating the file `redis-master.yml`.
+First we need to create a redis master. Let's start by creating the file `redis-master.yml` and save it in the same directory as we have used before.
 
 ```
 apiVersion: v1
@@ -41,7 +41,11 @@ spec:
 ```
 Notice how here we have two containers inside the same Pod definition.
 
-Then we need to create a service `redis-service.yml`
+```
+$ kubectl create -f /Users/kevinsimper/kubernetes-workshop/redis-master.yml
+```
+
+Then we need to create a service. Start with the file `redis-service.yml` and save it into the same directory.
 
 ```
 apiVersion: v1
@@ -59,7 +63,11 @@ spec:
     redis-sentinel: "true"
 ```
 
-We create a `redis-controller.yml`
+```
+$ kubectl create -f /Users/kevinsimper/kubernetes-workshop/redis-service.yml
+```
+
+Next we create a ReplicationController. Start with the file `redis-controller.yml` and save it to the same directory as we've used before.
 
 ```
 apiVersion: v1
@@ -91,7 +99,11 @@ spec:
           emptyDir: {}
 ```
 
-Then we can create our sentinel redis `redis-sentinel-controller.yml`
+```
+$ kubectl create -f /Users/kevinsimper/kubernetes-workshop/redis-controller.yml
+```
+
+Then we can create our sentinel redis. Start with the file `redis-sentinel-controller.yml` and save it to the same directory as we've used before.
 
 ```
 apiVersion: v1
@@ -117,6 +129,10 @@ spec:
             value: "true"
         ports:
           - containerPort: 26379
+```
+
+```
+$ kubectl create -f /Users/kevinsimper/kubernetes-workshop/redis-sentinel-controller.yml
 ```
 
 Then we can try to scale up our redis cluster
