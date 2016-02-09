@@ -7,24 +7,37 @@ Kevin Simper ([@kevinsimper](https://twitter.com/kevinsimper))
 [http://kubernetes.dkrcph.com](http://kubernetes.dkrcph.com)
 
 ---
+class: center, middle
+# What is Kubernetes?
+"an open-source platform for automating deployment, scaling, and operations of application containers across clusters of hosts"
+---
+class: middle
+# History
 
+- Published in 2014
+- Builds upon more than 10 years experience of managing containers within Google 
+---
+class: middle
 # Concepts
 
 - pods
 - replication controllers
 - services
 ---
-## Pod
+## Pods
+class: middle
 
 A Pod is one or more containers that must be scheduled onto the same host.
 
 Communicates on the same network. That means that they can communicate on localhost.
 ---
-## Replication Controller  
+class: middle
+## Replication Controllers 
 
-A Replicationcontroller is despite its name a simple program that ensures that a container is replicated a number of times.
+A Replication controller is despite its name a simple program that ensures that a container is replicated a number of times.
 ---
-## Service
+class: middle
+## Services
 
 A service is a load-balancer that routes traffic to pods.
 
