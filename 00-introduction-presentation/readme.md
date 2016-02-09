@@ -8,6 +8,9 @@ Kevin Simper ([@kevinsimper](https://twitter.com/kevinsimper))
 
 ---
 class: center, middle
+# what we represent
+---
+class: center, middle
 # What is Kubernetes?
 "an open-source platform for automating deployment, scaling, and operations of application containers across clusters of hosts"
 ---
@@ -16,6 +19,27 @@ class: middle
 
 - Published in 2014
 - Builds upon more than 10 years experience of managing containers within Google
+---
+class: center, middle
+# who is the target?
+## developers, devops, ops?
+---
+class: center, middle
+![Email from Docker about Swarm](http://i.imgur.com/wWbzzAR.png)
+---
+class: middle, center
+# how does swarm compare to kubernetes?
+---
+class: middle
+# what are we going to learn?
+- 3 very easy task
+- 1 very complicated
+---
+class: center, middle
+![DOOM Nightmare mode](http://i.imgur.com/4xOVeut.png)
+---
+class: center, middle
+# how are we going to do it?
 ---
 class: middle
 # Concepts
