@@ -2,7 +2,7 @@
 
 Lets try to run redis inside Kubernetes. Redis is a simpel Key-Value store.
 
-First we need to create a redis master.
+First we need to create a redis master. Let's start by creating the file `redis-master.yml`.
 
 ```
 apiVersion: v1
@@ -39,9 +39,9 @@ spec:
     - name: data
       emptyDir: {}
 ```
-Notice how here we have two containers inside the same Pod defenition.
+Notice how here we have two containers inside the same Pod definition.
 
-Then we need to create a service `redis-service.yaml`
+Then we need to create a service `redis-service.yml`
 
 ```
 apiVersion: v1
@@ -59,7 +59,7 @@ spec:
     redis-sentinel: "true"
 ```
 
-We create a `redis-controller.yaml`
+We create a `redis-controller.yml`
 
 ```
 apiVersion: v1
@@ -91,7 +91,7 @@ spec:
           emptyDir: {}
 ```
 
-Then we can create our sentinel redis `redis-sentinel-controller.yaml`
+Then we can create our sentinel redis `redis-sentinel-controller.yml`
 
 ```
 apiVersion: v1
