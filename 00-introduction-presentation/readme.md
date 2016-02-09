@@ -25,7 +25,10 @@ class: center, middle
 ## developers, devops, ops?
 ---
 class: center, middle
-![](http://i.imgur.com/wWbzzAR.png)
+![Email from Docker about Swarm](http://i.imgur.com/wWbzzAR.png)
+---
+class: middle, center
+# how does swarm compare to kubernetes?
 ---
 class: middle
 # what are we going to learn?
@@ -33,7 +36,7 @@ class: middle
 - 1 very complicated
 ---
 class: center, middle
-![](http://i.imgur.com/4xOVeut.png)
+![DOOM Nightmare mode](http://i.imgur.com/4xOVeut.png)
 ---
 class: center, middle
 # how are we going to do it?
