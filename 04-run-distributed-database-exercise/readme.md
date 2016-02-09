@@ -1,6 +1,6 @@
 # Run a database in Kubernetes
 
-Lets try to run redis inside Kubernetes. Redis is a simpel Key-Value store.
+Lets try to run redis inside Kubernetes. Redis is a simple Key-Value store.
 
 First we need to create a redis master. Let's start by creating the file `redis-master.yml` and save it in the same directory as we have used before.
 
