@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="resources/css/styles.css" media="all" rel="stylesheet">
+  </head>
+  <body>
+    <div id="navigation"><a href="/">Home</a></div>
+    <div id="github-ribbon"></div>
+    <div class="container">
+      <div class="col-xs-12">
+        <div id="rendered"> </div>
+      </div>
+    </div>
+    <script src="resources/js/getQueryParameter.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var q = getParameterByName('q');
+        q = typeof getParameterByName('q') === 'object' ? 'index' : getParameterByName('q');
+        // Set the page title
+        document.title = q + ' | Introduction to Kubernetes';
+        var file = q === 'index' ? 'readme.md' : q + '/readme.md';
+        $.get(file, function(response) {
+          if (/presentation/.test(q)) {
+            // Load the remark.js script
+            $.getScript('resources/js/remark-latest.min.js', function() {
+              var slideshow = remark.create({
+                source: response
+              });
+            });
+
+          }
+          else if (/exercise/.test(q) || q === 'index') {
+            // Add the Github Ribbon
+            $.get('resources/github-ribbon', function(response) {
+              $('#github-ribbon').html(response).show();
+            });
+
+            // Load the markdown script
+            $.getScript('resources/js/showdown.min.js', function() {
+              var converter = new showdown.Converter();
+              document.getElementById("rendered").innerHTML = converter.makeHtml(response);
+            });
+          }
+        });
+      });  
+    </script>
+  </body>
+</html>
