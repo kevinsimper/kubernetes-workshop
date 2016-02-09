@@ -81,3 +81,26 @@ class: middle
 A service is a load balancer that routes traffic to pods.
 
 It works across nodes.
+---
+class: middle
+# exercise 1 - getting up and running
+- docker-machine
+- etcd
+- hyperkube
+- kubectl
+---
+class: middle
+# exercise 2 - creating your first container
+- docker run
+- yml
+- kubernetes docs
+---
+class: middle
+# exercise 3 - load balance your container
+- replication controller
+- load balance
+---
+class: middle
+# exercise 4 - run a distributed database
+- redis cluster
+- fault tolerance
