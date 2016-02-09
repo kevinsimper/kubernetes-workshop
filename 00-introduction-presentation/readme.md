@@ -24,8 +24,8 @@ class: middle
 - replication controllers
 - services
 ---
-## Pods
 class: middle
+## Pods
 
 A Pod is one or more containers that must be scheduled onto the same host.
 
