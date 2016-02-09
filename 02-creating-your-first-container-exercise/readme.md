@@ -76,5 +76,10 @@ we can now delete that container by doing
 $ kubectl delete pod nginx
 ```
 
-ANOTHER EXAMPLE
-- arguments
+## Extra task
+
+Find out what extra properties that is needed to define enviroment variables
+
+http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_pod
+
+Hint: `PodSpec`

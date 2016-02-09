@@ -12,3 +12,8 @@ class: middle
 ---
 class: middle
 # bootstrapping redis in kubernetes is easy
+
+---
+class: middle
+# hosting
+---
