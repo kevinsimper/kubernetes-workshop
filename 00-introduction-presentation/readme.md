@@ -13,6 +13,9 @@ MobilePay: Send 40 kr to
 ##+45 40 36 05 65
 ---
 class: center, middle
+# wifi: 2kcpPsPsL2oZEEMQ
+---
+class: center, middle
 # what we represent
 ---
 class: center, middle
