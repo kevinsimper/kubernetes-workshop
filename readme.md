@@ -9,3 +9,4 @@
     1. [Run a distributed database](/?q=04-run-distributed-database-exercise) ([screencast](https://drive.google.com/file/d/0B3CtoDfMDML6YVVIYlJXeVh6WDQ/view?usp=sharing))
 * [What did we learn?](/?q=05-what-did-we-learn-presentation)
 * Resources
+    * [Kubernetes Documentation](http://kubernetes.io/v1.1/docs/whatisk8s.html)
