@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html> 
   <head>
-    <title>Introduction to Kubernetes</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="resources/css/styles.css" media="all" rel="stylesheet">
   </head>
   <body>
     <div id="github-ribbon" style="display:none"></div>
@@ -13,31 +13,32 @@
         <div id="rendered"> </div>
       </div>
     </div>
-    <script src="js/getQueryParameter.js"></script>
+    <script src="resources/js/getQueryParameter.js"></script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
       $(document).ready(function() {
         var q = getParameterByName('q');
         q = typeof getParameterByName('q') === 'object' ? 'index' : getParameterByName('q');
-        
-        var file = 'md/' + q + '.md';
+        // Set the page title
+        document.title = q + ' | Introduction to Kubernetes';
+        var file = q === 'index' ? 'readme.md' : q + '/readme.md';
         $.get(file, function(response) {
-          if (q === 'presentation') {
+          if (/presentation/.test(q)) {
             // Load the remark.js script
-            $.getScript('https://gnab.github.io/remark/downloads/remark-latest.min.js', function() {
+            $.getScript('resources/js/remark-latest.min.js', function() {
               $("#source").html(response);
               var slideshow = remark.create();
             });
 
           }
-          else {
+          else if (/exercise/.test(q) || q === 'index') {
             // Add the Github Ribbon
             $.get('resources/github-ribbon', function(response) {
               $('#github-ribbon').html(response).show();
             });
 
             // Load the markdown script
-            $.getScript('js/markdown.min.js', function() {
+            $.getScript('resources/js/markdown.min.js', function() {
               document.getElementById("rendered").innerHTML = markdown.toHTML(response);
             });
           }
