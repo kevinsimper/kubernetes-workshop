@@ -38,8 +38,9 @@
             });
 
             // Load the markdown script
-            $.getScript('resources/js/markdown.min.js', function() {
-              document.getElementById("rendered").innerHTML = markdown.toHTML(response);
+            $.getScript('resources/js/showdown.min.js', function() {
+              var converter = new showdown.Converter();
+              document.getElementById("rendered").innerHTML = converter.makeHtml(response);
             });
           }
         });

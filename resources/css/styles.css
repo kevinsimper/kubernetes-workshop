@@ -1,12 +1,11 @@
+pre {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 code {
-    word-break: normal;
-    white-space: pre;
-    line-height: 1.45;
     color: #333;
     background-color: #f7f7f7;
-    display: block;
-    padding-bottom: 17px;
-    padding-left: 11px;
 }
 
 ul {
