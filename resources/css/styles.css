@@ -5,6 +5,10 @@
     z-index:1000;
 }
 
+#github-ribbon {
+    display: none;
+}
+
 pre {
     margin-top: 15px;
     margin-bottom: 15px;
