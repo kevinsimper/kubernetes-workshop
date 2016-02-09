@@ -42,27 +42,42 @@ class: center, middle
 # how are we going to do it?
 ---
 class: middle
-# Concepts
+# concepts
 
 - pods
 - replication controllers
 - services
 ---
 class: middle
-## Pods
+## pods
 
-A Pod is one or more containers that must be scheduled onto the same host.
+A pod consists of one or more containers that have a shared context
+- will always end on the same host
+- shares IP and port space (can reach each other on localhost)
 
-Communicates on the same network. That means that they can communicate on localhost.
+
+Pods are the smallest units that can be created, scheduled, managed and deployed by Kubernetes
 ---
 class: middle
-## Replication Controllers
+## pods
+
+- Pods are composable. They will be deleted if a node dies and new one will be created instead.
+
+- Provide a higher-level of abstraction than the raw, low-level container interface.
+ 
+- Pods are normally created and managed by so called replication controllers and users shouldn't need to create them manually
+
+---
+class: middle
+## replication controllers
 
 A Replication controller is despite its name a simple program that ensures that a container is replicated a number of times.
+
+You can for example tell the replication controller that we want to have 4 pods up and running and it will then take care of that for you.
 ---
 class: middle
-## Services
+## services
 
-A service is a load-balancer that routes traffic to pods.
+A service is a load balancer that routes traffic to pods.
 
 It works across nodes.
