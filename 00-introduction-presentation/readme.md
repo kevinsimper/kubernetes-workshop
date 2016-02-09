@@ -8,6 +8,11 @@ Kevin Simper ([@kevinsimper](https://twitter.com/kevinsimper))
 
 ---
 class: center, middle
+# food
+MobilePay: Send 40 kr to
+##+45 40 36 05 65
+---
+class: center, middle
 # what we represent
 ---
 class: center, middle
