@@ -142,7 +142,15 @@ $ kubectl scale rc redis --replicas=3
 $ kubectl scale rc redis-sentinel --replicas=3
 ```
 
-We can then try to access our redis cluster now.
+Now we want to find out the IP address and the port of our redis service.
+
+```
+$ kubectl describe service redis
+```
+
+Look for "IP" and "Port".
+
+We can then try to access our redis cluster.
 
 ```
 $ docker run --rm -it --net=host redis bash
@@ -150,7 +158,7 @@ $ docker run --rm -it --net=host redis bash
 then we simply connect to it by first accessing the redis sentinel service.
 
 ```
-$ redis-cli -h 10.0.0.13 -p 26379
+$ redis-cli -h REPLACE_WITH_IP -p REPLACE_WITH_PORT
 ```
 
 Then we ask it for a master
@@ -161,12 +169,17 @@ Then we ask it for a master
 2) "6379"
 ```
 
-then we can connect to that machine
+First run exit
 ```
-redis-cli -h 172.17.0.2 -p 6379
+$ exit
 ```
 
-and then put some data
+then we can connect to that machine
+```
+redis-cli -h REPLACE_WITH_IP -p REPLACE_WITH_PORT
+```
+
+and then put some data in
 
 ```
 172.17.0.2:6379> SET KUBERNETES AWESOME
@@ -175,9 +188,15 @@ OK
 1) "KUBERNETES"
 ```
 
+Run exit two times
+```
+$ exit
+$ exit
+```
+
 Lets try to delete our originally redis-master
 ```
 $ kubectl delete pods redis-master
 ```
 
-and now will a slave be promoted as a master. You can run the above redis commands to test it!
+and now a slave will be promoted as a master. You can run the above redis commands to test it!
