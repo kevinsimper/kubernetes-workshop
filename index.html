@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>Introduction to Kubernetes</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="github-ribbon" style="display:none"></div>
+    <div class="container">
+      <div class="col-xs-12">    
+        <div id="source" style="display:none;"></div>
+        <div id="rendered"> </div>
+      </div>
+    </div>
+    <script src="js/getParameter.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var q = getParameterByName('q');
+        q = typeof getParameterByName('q') === 'object' ? 'index' : getParameterByName('q');
+        
+        var file = 'md/' + q + '.md';
+        $.get(file, function(response) {
+          if (q === 'presentation') {
+            // Load the remark.js script
+            $.getScript('https://gnab.github.io/remark/downloads/remark-latest.min.js', function() {
+              $("#source").html(response);
+              var slideshow = remark.create();
+            });
+
+          }
+          else {
+            // Add the Github Ribbon
+            $.get('resources/github-ribbon', function(response) {
+              $('#github-ribbon').html(response).show();
+            });
+
+            // Load the markdown script
+            $.getScript('js/markdown.min.js', function() {
+              document.getElementById("rendered").innerHTML = markdown.toHTML(response);
+            });
+          }
+        });
+      });  
+    </script>
+  </body>
+</html>
