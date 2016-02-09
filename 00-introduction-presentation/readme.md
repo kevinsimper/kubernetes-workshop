@@ -1,3 +1,13 @@
+class: center, middle
+# Introduction to Kubernetes
+
+Andreas Elmertoft ([@elmertoft](https://twitter.com/elmertoft)  
+Kevin Simper [@kevinsimper](https://twitter.com/kevinsimper)
+
+[http://kubernetes.dkrcph.com](http://kubernetes.dkrcph.com)
+
+---
+
 # Concepts
 
 - pods
