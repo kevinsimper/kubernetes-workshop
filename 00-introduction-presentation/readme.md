@@ -8,14 +8,6 @@ Kevin Simper ([@kevinsimper](https://twitter.com/kevinsimper))
 
 ---
 class: center, middle
-# food
-MobilePay: Send 40 kr to
-##+45 40 36 05 65
----
-class: center, middle
-# wifi: 2kcpPsPsL2oZEEMQ
----
-class: center, middle
 # what we represent
 ---
 class: center, middle
@@ -31,9 +23,6 @@ class: middle
 class: center, middle
 # who is the target?
 ## developers, devops, ops?
----
-class: center, middle
-![Email from Docker about Swarm](http://i.imgur.com/wWbzzAR.png)
 ---
 class: middle, center
 # how does swarm compare to kubernetes?
